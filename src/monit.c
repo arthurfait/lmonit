@@ -174,7 +174,9 @@ int main()
             wmove(top->win, line++, 1);
             wprintw(top->win, " CPU load:\t %.1f%%", inf.load * 100);
             wmove(top->win, line++, 1);
-            wprintw(top->win, " Memused:\t %u MB", (inf.mi.memtotal - inf.mi.memfree - inf.mi.buffers - inf.mi.cashed) / 1024);
+            wprintw(top->win, " Memused1:\t %u MB", (inf.mi.memtotal - inf.mi.memfree - inf.mi.buffers - inf.mi.cashed) / 1024);
+            wmove(top->win, line++, 1);
+            wprintw(top->win, " Memused2:\t %u MB", (inf.mi.memtotal - inf.mi.memavailable) / 1024);
             wmove(top->win, line++, 1);
             wprintw(top->win, " Swapused:\t %u MB", (inf.mi.swaptotal - inf.mi.swapfree) / 1024);
             wmove(top->win, line++, 1);
